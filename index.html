@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+    <div class="container   ">
+        <nav>
+            <h1><span>K</span>avi<span>.</span></h1>
+            <ul>
+                <li><a href="input.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            </nav>
+            <div class="header-text">
+                <p>                    </p>
+                <h1>Hi, I'm <span>Kaviarasu</span><br>Passionate web developer skilled in HTML, CSS, JavaScript,<br>responsive design </h1>
+             </div>
+        </div>
+    </div>
+    <!-- --------------about------------ -->
+   
+   <!-- --------------service--------------- -->
+   
+   <!-- -------------------------------contact--------- -->
+   
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        </script>
+</body>
+</html>

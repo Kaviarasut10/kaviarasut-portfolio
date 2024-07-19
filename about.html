@@ -1,0 +1,201 @@
+<html>
+    <style>
+        *{
+    margin: 0;
+    padding:0;
+    font-family: 'poppins',sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    padding: 5px 5%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+nav h1{
+    font-size: 50px;
+    padding-right: 0;
+}
+nav h1 span{
+    color: #ff004f;
+    
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+    position: relative;
+}
+    nav ul li a{
+        color: #fff;
+        text-decoration: none;
+        font-size: 18px;
+        position: relative;
+    }
+nav ul li a::after{
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #ff004f;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+html{
+    scroll-behavior: smooth ;
+}
+body{
+    background: #080808;
+    color: #fff;
+}
+    *about{
+        padding: 80px 0;
+        color: #ababab;
+    }
+    .row{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .about-col-1{
+        flex-basis: 35%;
+    }
+    .about-col-1 img{
+        width: 100%;
+        border-radius: 15px;
+    }
+    .about-col-2{
+        flex-basis: 60%;
+    }
+    .sub-title{
+        font-size: 60px;
+        font-weight: 600;
+        color: #fff;
+    }
+    .tab-titles{
+        display: flex;
+        margin: 20px 0 40px;
+    }
+    .tab-links{
+        margin-right: 50px;
+        font-size: 18px;
+        font-weight: 500;
+        cursor: pointer;
+        position: relative;
+    
+    }
+    .tab-links::after{
+        content: '';
+        width: 0;
+        height: 3px;
+        background: #ff004f;
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: 0.5s;  
+    }
+    .tab-links.active-link::after{
+        width: 50%;
+    }
+    .tab-contents ul li{
+        list-style: none;
+        margin: 10px 0;
+    }
+    .tab-contents ul li span{
+        color:  #b54769;
+        font-size: 14px;
+    
+    }
+    .tab-contents{
+        display: none;
+    }
+    .tab-contents.active-tab{
+        display: block;
+    }
+
+
+</style>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav>
+                    <h1><span>K</span>avi<span>.</span></h1>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    </nav>
+                </div>
+            </div><div id="about">
+    <div class="container">
+    <div class="row">
+    <div class="about-col-1">
+        <img src="kavi2.jpg"> 
+    </div>
+    <div class="about-col-2">
+        <h1 class="sub-title">About Me</h1>
+        <p>Hi, I'm Kaviarasu, a passionate and detail-oriented web developer. With a strong foundation in HTML, CSS, JavaScript, and responsive design principles, I am committed to creating visually appealing and user-friendly websites. My recent projects include developing dynamic web applications and collaborating with teams to deliver high-quality digital solutions. Eager to leverage my skills and grow in the tech industry, I am excited to contribute to innovative web development projects.</p>
+        <div class="tab-titles">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+            <p class="tab-links" onclick="opentab('education')">Education</p>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+            <ul>
+                <li><span>C</span><br>Basics in c programming.</li>
+                <li><span>Java</span><br>Core Java.</li>
+                <li><span>Web Development</span><br>Front-End designer - HTML,CSS,Javascript .</li>
+            </ul>
+
+        </div>
+        <div class="tab-contents" id="experience">
+            <ul>
+                <li><span>Projects :</span><br>-> Libray Management System : <br>Book Management: Added functionalities for adding, updating, and deleting book records.
+                    Member Management: Implemented features for registering new members, updating member information, and managing member borrowing history.
+                    Circulation: Automated the process of issuing and returning books, including managing overdue books and fines.
+                    Search Functionality: Enabled advanced search options to find books by title, author, genre, and more.
+                    User Interface: Designed a user-friendly interface for both librarians and library members. <br>
+                    <br> -> personal portfolio website : <br>Designed and developed a personal portfolio website using HTML, CSS, and JavaScript.
+                    Implemented responsive design to ensure compatibility across various devices and browsers.
+                    Showcased my projects and skills effectively.</li>
+            </ul>
+
+        </div>
+        <div class="tab-contents" id="education">
+            <ul>
+                <li><span>2023-2025</span><br>MCA - SRM University</li>
+                <li><span>2020-2023</span><br>BCA - Achariya Arts and Science Collage</li>
+                <li><span>2018-2019</span><br>Sacred heart convent A.I Higher Secondary School</li>
+                <li><span>2016-2017</span><br>The Claribel Matric School</li>
+              
+            </ul>
+        </div>
+    </div>
+    </div>
+</div>
+</div>
+    </body>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        </script>
